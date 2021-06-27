@@ -1,0 +1,25 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const login = (username, password)=>{
+    return _axiosDefault.default.post("http://localhost:5000/api/auth/login", {
+        username,
+        password
+    }).then((response)=>{
+        if (response.data.accessToken) localStorage.setItem("user", JSON.stringify(response.data));
+        return response.data;
+    });
+};
+const logout = ()=>{
+    localStorage.removeItem("user");
+};
+const getCurrentUser = ()=>{
+    return JSON.parse(localStorage.getItem("user"));
+};
+const exportModule = {
+    login,
+    getCurrentUser,
+    logout
+};
+exports.default = exportModule;

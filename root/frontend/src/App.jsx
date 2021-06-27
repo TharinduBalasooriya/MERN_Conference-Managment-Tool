@@ -1,10 +1,24 @@
 import React  from "react";
-
+import { BrowserRouter as  Router,Route,Switch } from "react-router-dom";
+import AdminLogin from './component/adminlogin/login.component'
+import AdminDash from './component/adminDashboard/admin.component'
+import "bootstrap/dist/css/bootstrap.min.css";
 export default class App extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        return <h1>Hello to React11</h1>;
+        return (
+            <div>
+                <Router>
+                    <Switch>
+                        <Route exact path="/admin" component={AdminLogin}></Route>
+                        <Route  path="/admin-dash" component={AdminDash}></Route>
+                    </Switch>
+
+
+                </Router>
+            </div>
+        );
     }
 }

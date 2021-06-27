@@ -1,0 +1,35 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Admin = (props)=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 5
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 6
+        },
+        __self: undefined
+    }, "Admin Home Page")));
+};
+_c = Admin;
+exports.default = Admin;
+var _c;
+$RefreshReg$(_c, "Admin");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
