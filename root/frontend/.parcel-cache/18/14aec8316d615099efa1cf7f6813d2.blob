@@ -1,0 +1,267 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _authService = require("../../services/auth.service");
+var _authServiceDefault = parcelHelpers.interopDefault(_authService);
+var _reactBootstrapIcons = require("react-bootstrap-icons");
+var _adminCss = require("./admin.css");
+const Admin = (props)=>{
+    let user = _authServiceDefault.default.getCurrentUser();
+    console.log(user.usertype);
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "admin-body",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "container bootstrap snippets bootdey",
+        style: {
+            backgroundColor: "rgba(194, 194, 194, 0.3)"
+        },
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 17
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "row",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 18
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-md-12",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 19
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        className: "admin-title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 20
+        },
+        __self: undefined
+    }, "Admin Home Page"))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "row",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 23
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-sm-4",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 24
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "tile purple",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 25
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 26
+        },
+        __self: undefined
+    }, "Mange Home Page"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "row",
+        to: "/",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 27
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapIcons.HouseDoorFill, {
+        color: "white",
+        size: 96,
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 29
+        },
+        __self: undefined
+    })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-sm-4",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 36
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "tile red",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 37
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 38
+        },
+        __self: undefined
+    }, "Manage KeyNotes"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: "/",
+        className: "row",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 39
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapIcons.Mic, {
+        color: "white",
+        size: 96,
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 41
+        },
+        __self: undefined
+    })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-sm-4",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 47
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "tile orange",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 48
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 49
+        },
+        __self: undefined
+    }, "Manage Research Papers"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "row",
+        to: "/",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 50
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapIcons.Newspaper, {
+        color: "white",
+        size: 96,
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 52
+        },
+        __self: undefined
+    }))))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "row",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 58
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-sm-4",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 59
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "tile green",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 60
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 61
+        },
+        __self: undefined
+    }, "Manage WorkShops"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "row",
+        to: "",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 62
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapIcons.FileSlides, {
+        color: "white",
+        size: 96,
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 64
+        },
+        __self: undefined
+    })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "col-sm-4",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 71
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "tile blue",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 72
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        className: "title",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 73
+        },
+        __self: undefined
+    }, "Maange Payment"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        className: "row",
+        to: "",
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 74
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapIcons.CurrencyBitcoin, {
+        color: "white",
+        size: 96,
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 76
+        },
+        __self: undefined
+    }))))))));
+};
+_c = Admin;
+exports.default = Admin;
+var _c;
+$RefreshReg$(_c, "Admin");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

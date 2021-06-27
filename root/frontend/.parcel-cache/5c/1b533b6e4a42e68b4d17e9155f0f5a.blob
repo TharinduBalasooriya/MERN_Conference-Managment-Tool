@@ -1,0 +1,46 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _authService = require("../../services/auth.service");
+var _authServiceDefault = parcelHelpers.interopDefault(_authService);
+const Admin = (props)=>{
+    let user = _authServiceDefault.default.getCurrentUser().userType;
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 7
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 8
+        },
+        __self: undefined
+    }, "Admin Home Page"), /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        __source: {
+            fileName: "D:\\AF_Final\\AF_Final\\root\\frontend\\src\\component\\adminDashboard\\admin.component.jsx",
+            lineNumber: 9
+        },
+        __self: undefined
+    }, {
+        user
+    })));
+};
+_c = Admin;
+exports.default = Admin;
+var _c;
+$RefreshReg$(_c, "Admin");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
