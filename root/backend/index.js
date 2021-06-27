@@ -4,7 +4,12 @@ let app = express();
 
 const cors = require("cors");
 let router = require("./api/api-router")
+
+
+let keyNoteAPI = require("./api/keynote.api");
+
 let worksopRouter = require('./api/workshop-api/workshop-api-router');
+
 let mongoose = require("mongoose");
 
 const port = 5000;
@@ -34,7 +39,11 @@ if (!db) {
 }
 
 app.use("/api", router);
+
+app.use("/keyNote", keyNoteAPI());
+
 app.use("/workshop", worksopRouter);
+
 
 app.listen(port, () => {
   console.log("Backend Started " + port);
