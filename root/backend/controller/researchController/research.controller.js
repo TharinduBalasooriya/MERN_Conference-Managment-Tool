@@ -143,6 +143,19 @@ const uploadFile =  function(req,res){
 }
 
 
+//download Templates
+
+const downloadPaperTemplate =  function(req,res){
+    const file = `templates/ICAF-Paper-Template.docx`;
+    res.download(file); // Set disposition and send it.
+}
+
+const downloadWorkshopTemplate =  function(req,res){
+    const file = `templates/ICAF-Workshop-Template.pptx`;
+    res.download(file); // Set disposition and send it.
+}
+
+
 
 
 module.exports ={
@@ -151,5 +164,8 @@ module.exports ={
     getById,
     deletePaper,
     updatePaper,
-    uploadFile
+    uploadFile,
+    downloadPaperTemplate,
+    downloadWorkshopTemplate
+
 }

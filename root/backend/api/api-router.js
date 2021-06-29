@@ -46,6 +46,11 @@ router.get("/", (req, res) => {
 
   router.route("/papers/uploads").post(rpaperController.uploadFile);
 
+
+  //download templates
+
+  router.route("/templates/paper").get(rpaperController.downloadPaperTemplate)
+  router.route("/templates/workshop").get(rpaperController.downloadWorkshopTemplate)
   
 
 

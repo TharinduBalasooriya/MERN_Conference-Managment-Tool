@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import WorkshopMenu from './component/workshopComponent/workshopMenu'
 import AddWorkshopProposal from './component/workshopComponent/addWorkshopProposal';
 import ProposalList from './component/workshopComponent/workshopproposals.list';
+import TemplateDownload from './component/templateDownloadPage/template.component'
 //import WorkshopList from './component/workshopComponent/workshop.list';
 
 
@@ -25,6 +26,7 @@ export default class App extends React.Component {
                     <Switch>
                         <Route exact path="/admin" component={AdminLogin}></Route>
                         <Route  path="/admin-dash" component={AdminDash}></Route>
+                        <Route  path="/template" component={TemplateDownload}></Route>
 
                         <Route exact path="/" component={HomePage}></Route>
 
