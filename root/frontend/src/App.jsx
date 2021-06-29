@@ -14,7 +14,7 @@ import AddWorkshopProposal from './component/workshopComponent/addWorkshopPropos
 import ProposalList from './component/workshopComponent/workshopproposals.list';
 import TemplateDownload from './component/templateDownloadPage/template.component'
 //import WorkshopList from './component/workshopComponent/workshop.list';
-
+import Addpaper from './component/researchComponent/addRpaper'
 
 export default class App extends React.Component {
     constructor(props) {
@@ -28,6 +28,7 @@ export default class App extends React.Component {
                         <Route exact path="/admin" component={AdminLogin}></Route>
                         <Route  path="/admin-dash" component={AdminDash}></Route>
                         <Route  path="/template" component={TemplateDownload}></Route>
+                        <Route  path="/addPaper" component={Addpaper}></Route>
 
                         <Route exact path="/" component={HomePage}></Route>
                         <Route path="/registration" component={UserRegistration}></Route>

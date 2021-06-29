@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, Button, CardDeck} from 'react-bootstrap';
 import './userRegistration.styles.css';
 import Header from '../../component/homePageElements/header/header.component'
+import {  Link } from "react-router-dom";
 
 const Registration = (props) =>{
     const initialState={
@@ -23,7 +24,10 @@ const Registration = (props) =>{
                             Want to showcase your findings to the world? 
                             Join ICAF as a Researcher and get your ideas published!
                             </Card.Text>
+                            <Link to="/addpaper">
                             <Button variant="dark">Register</Button>{' '}
+                            </Link>
+                            
                         </Card.Body>
                     </Card>
                     <Card>
