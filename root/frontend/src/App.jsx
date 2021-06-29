@@ -7,6 +7,7 @@ import MangKeynote from "./component/keynoteComponent/manageKeynote";
 import NewKeynote from "./component/keynoteComponent/AddKeyNote";
 import EditKeynote from "./component/keynoteComponent/editKeynote";
 import HomePage from './page/homePage/homePage.component';
+import UserRegistration from './component/userRegistration/userRegistration.component';
 import "bootstrap/dist/css/bootstrap.min.css";
 import WorkshopMenu from './component/workshopComponent/workshopMenu'
 import AddWorkshopProposal from './component/workshopComponent/addWorkshopProposal';
@@ -29,6 +30,7 @@ export default class App extends React.Component {
                         <Route  path="/template" component={TemplateDownload}></Route>
 
                         <Route exact path="/" component={HomePage}></Route>
+                        <Route path="/registration" component={UserRegistration}></Route>
 
                         <Route  path="/admin-dash/workshop" component={WorkshopMenu}></Route>
                         <Route path="/user/add-proposal" component={AddWorkshopProposal}></Route>

@@ -33,7 +33,11 @@ const Header = () => (
                         <NavDropdown.Item href="#action/3.1">Workshops</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Call for workshops</NavDropdown.Item>
                     </NavDropdown>
+
+                    <Nav.Link href="/registration">Registration</Nav.Link>
+
                     <Nav.Link href="/template" >Downloads</Nav.Link>
+
                     <Nav.Link href="#features">Past Proceedings</Nav.Link>
                     <Nav.Link href="#pricing">Contact Us</Nav.Link>
                     </Nav>
