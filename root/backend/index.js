@@ -1,5 +1,6 @@
 
 let express = require("express");
+const fileUpload = require('express-fileupload');
 let app = express();
 
 const cors = require("cors");
@@ -27,6 +28,7 @@ app.use(
   );
   app.use(cors());
   app.use(express.json());
+  app.use(fileUpload());
 
 
 mongoose.connect("mongodb+srv://tharindu:tharindu@cluster0.vnll5.mongodb.net/ICAF?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
