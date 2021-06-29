@@ -6,7 +6,8 @@ let  rpaperController =  require('../controller/researchController/research.cont
 
 
 //Import Middlewares
-let verify =  require('../middleware/VerifySingUP')
+let verify =  require('../middleware/VerifySingUP');
+const { route } = require("./workshop-api/workshop-api-router");
 
 router.get("/", (req, res) => {
     res.send("ICAF API Working");
@@ -39,6 +40,18 @@ router.get("/", (req, res) => {
 
 
   router.route("/researchers/:id").put(rpaperController.updatePaper);
+
+
+  //uploadPaper
+
+  router.route("/papers/uploads").post(rpaperController.uploadFile);
+
+
+  //download templates
+
+  router.route("/templates/paper").get(rpaperController.downloadPaperTemplate)
+  router.route("/templates/workshop").get(rpaperController.downloadWorkshopTemplate)
+  
 
 
 

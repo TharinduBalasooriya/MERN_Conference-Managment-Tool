@@ -1,5 +1,6 @@
 const express =  require('express');
 
+
 const Researcher = require('../../models/researcher');
 
 
@@ -116,11 +117,55 @@ const updatePaper = async function(req,res){
 
 
 } 
+//Upload File
+
+
+
+const uploadFile =  function(req,res){
+
+    if (req.files === null) {
+        return res.status(400).json({ msg: 'Please upload your Researchpaper' });
+      }
+
+
+      const paper =  req.files.file;
+
+      paper.mv(`papers/${paper.name}`, err => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send(err);
+        }
+    
+        res.json({ fileName: paper.name, filePath: `/papers/${paper.name}` });
+      });
+    
+
+}
+
+
+//download Templates
+
+const downloadPaperTemplate =  function(req,res){
+    const file = `templates/ICAF-Paper-Template.docx`;
+    res.download(file); // Set disposition and send it.
+}
+
+const downloadWorkshopTemplate =  function(req,res){
+    const file = `templates/ICAF-Workshop-Template.pptx`;
+    res.download(file); // Set disposition and send it.
+}
+
+
+
 
 module.exports ={
     addReasearcher,
     getAllResearches,
     getById,
     deletePaper,
-    updatePaper
+    updatePaper,
+    uploadFile,
+    downloadPaperTemplate,
+    downloadWorkshopTemplate
+
 }
