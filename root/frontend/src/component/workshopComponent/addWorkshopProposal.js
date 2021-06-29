@@ -5,9 +5,8 @@ import axios from 'axios';
 class AdddWorkshopProposal extends Component{
     constructor(props){
         super(props);
-        debugger;
+        //debugger;
         this.state = {
-            workshopProposal: [],
             title: '',
             description: '',
             date: new Date().now,
@@ -22,26 +21,30 @@ class AdddWorkshopProposal extends Component{
         this.onChange = this.onChange.bind(this);
     }
 
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value }); 
+    }
+
     onSubmit(e){
         e.preventDefault();
 
         let workshopProposal = {
             title: this.state.title,
-            title: this.state.title,
+            description: this.state.description,
             date: this.state.date,
             status: this.state.status,
             duration: this.state.duration,
             conductorName: this.state.conductorName,
-            conductorPhone: this.state.condPhoneuctor,
+            conductorPhone: this.state.conductorPhone,
             conductorEmail: this.state.conductorEmail
-        };
+        }
 
     console.log("Before create");
                     
-        axios.post('http://localhost:8083/workshop/create-workshopproposal', workshopProposal)
-        .then(res => {
+        axios.post('http://localhost:5000/workshop-proposal/create-workshopproposal',workshopProposal)
+        .then(data => {
             alert("data added successfully");
-            console.log(res);
+            console.log(data);
         })
         .catch(err => {
             console.log(err);
@@ -51,19 +54,15 @@ class AdddWorkshopProposal extends Component{
     }
     //onSubmit end
 
-    onChange(e){
-        this.setState({ [e.target.name]: e.target.value }); 
-    }
-
     render(){
         return(
-            <div>
+            <div className="container">
                 <h1>Workshop Proposal Details</h1>
-                <div>
+                <div >
                     <form onSubmit={this.onSubmit}>
-                    <div class="sm-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" 
+                    <div className="sm-3">
+                        <label for="title" className="form-label">Title</label>
+                        <input type="text" className="form-control" 
                         id="title" 
                         name='title' 
                         value={this.state.title}
@@ -146,7 +145,7 @@ class AdddWorkshopProposal extends Component{
                         />
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
