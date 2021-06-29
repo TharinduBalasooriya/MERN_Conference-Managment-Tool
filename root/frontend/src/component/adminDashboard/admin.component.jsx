@@ -36,7 +36,7 @@ const Admin = (props)=>{
                 <div className="col-sm-4" >
                     <div className="tile red">
                         <h3 className="title">Manage KeyNotes</h3>
-                        <Link to="/"className="row">
+                        <Link to="/mng-keynotes"className="row">
 
                             <Mic color="white" size={96} />
 
@@ -59,7 +59,7 @@ const Admin = (props)=>{
                 <div className="col-sm-4">
                     <div className="tile green">
                         <h3 className="title">Manage WorkShops</h3>
-                        <Link className="row" to="">
+                        <Link className="row" to="/admin-dash/workshop">
 
                             <FileSlides color="white" size={96} />
 
