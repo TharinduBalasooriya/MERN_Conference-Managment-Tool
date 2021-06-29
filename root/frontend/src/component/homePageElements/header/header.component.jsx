@@ -1,7 +1,7 @@
 import React from 'react';
 import {Nav, NavDropdown, Navbar} from 'react-bootstrap';
 
-//import Logo from '../../../../public/assets/logo/ICAF-3.png';
+//
 
 
 const Header = () => (
@@ -10,7 +10,7 @@ const Header = () => (
             <Navbar.Brand href="#home">
             <img
                 alt=""
-                //src= {}
+                src= {'https://lh3.googleusercontent.com/proxy/yL2NM8laiFiVLuChgZy35YZn30wJKhEPGMQRFYFJwj8-EaZANgiRDSoGeGyfwHxB11c8ni3tWo2djiFXf1Hc'}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
