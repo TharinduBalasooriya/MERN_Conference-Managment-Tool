@@ -5,9 +5,9 @@ const controller = require('../../controller/workshopController/workshopControll
 
 //module.exports = function(){
 
-    router.get("/", (req, res) => {
-        res.send("workshop API Working");
-      });
+    // router.get("/", (req, res) => {
+    //     res.send("workshop API Working");
+    //   });
 
     
     router.post('/create-workshop', controller.createWorkshop);
