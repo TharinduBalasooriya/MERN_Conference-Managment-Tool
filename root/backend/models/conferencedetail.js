@@ -7,7 +7,8 @@ const conferenceDetailsSchema = mongoose.Schema({
   description: String,
   workshopDeadline: Date,
   conferencePaperDeadline: Date,
-  attendeeRegistrationDeadline: Date
+  attendeeRegistrationDeadline: Date,
+  status: String
 
 });
 //exporting conferencedetails
