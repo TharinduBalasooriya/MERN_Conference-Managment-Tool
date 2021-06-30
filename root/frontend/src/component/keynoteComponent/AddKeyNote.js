@@ -25,7 +25,8 @@ class NewKeynote extends Component {
             speaker: this.state.speaker,
             speakerInfo: this.state.speakerInfo,
             keynoteTitle:this.state.KeynoteTitle,
-            keynote:this.state.keynote
+            keynote:this.state.keynote,
+            status:'pending'
         }
         console.log(KeyNote);
         axios.post('http://localhost:5000/keyNote/create', KeyNote)
