@@ -13,6 +13,8 @@ let worksopRouter = require('./api/workshop-api/workshop-api-router');
 
 let worksopProposalRouter = require('./api/workshop-api/workshopProposal-api-router');
 
+let conferenceDetailsRouter = require('./api/home-api-routes');
+
 
 
 let mongoose = require("mongoose");
@@ -50,6 +52,8 @@ app.use("/keyNote", keyNoteAPI());
 
 app.use("/workshop", worksopRouter);
 app.use("/workshop-proposal", worksopProposalRouter);
+
+app.use("/conference", conferenceDetailsRouter);
 
 
 app.listen(port, () => {
