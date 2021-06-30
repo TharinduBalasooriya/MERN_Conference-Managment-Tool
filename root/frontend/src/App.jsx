@@ -8,6 +8,7 @@ import NewKeynote from "./component/keynoteComponent/AddKeyNote";
 import EditKeynote from "./component/keynoteComponent/editKeynote";
 import HomePage from './page/homePage/homePage.component';
 import UserRegistration from './component/userRegistration/userRegistration.component';
+import ContactUs from './component/contactUs/contactUspage.component';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AcceptedWorkshopList from './component/workshopComponent/acceptedWorkshopList'
 import ProposalList from './component/workshopComponent/workshopproposals.list';
@@ -22,6 +23,7 @@ import Addpaper from './component/researchComponent/addRpaper'
 
 import RPaperHome from './component/resarchPaperMgmt/rpaperhome'
 import ReviewPaper from "./component/resarchPaperMgmt/reviewPaper";
+import ContactUsPage from "./component/contactUs/contactUspage.component";
 
 
 
@@ -43,6 +45,7 @@ export default class App extends React.Component {
 
                         <Route exact path="/" component={HomePage}></Route>
                         <Route path="/registration" component={UserRegistration}></Route>
+                        <Route path="/contact" component={ContactUs}></Route>
 
                         <Route  path="/workshop/template" component={TemplateDownload}></Route>
 

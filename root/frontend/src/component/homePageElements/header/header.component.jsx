@@ -39,7 +39,7 @@ const Header = () => (
                     <Nav.Link href="/template" >Downloads</Nav.Link>
 
                     <Nav.Link href="#features">Past Proceedings</Nav.Link>
-                    <Nav.Link href="#pricing">Contact Us</Nav.Link>
+                    <Nav.Link href="/contact">Contact Us</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
         </Navbar>
