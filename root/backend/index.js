@@ -12,7 +12,11 @@ let worksopRouter = require('./api/workshop-api/workshop-api-router');
 
 let worksopProposalRouter = require('./api/workshop-api/workshopProposal-api-router');
 
+
+let conferenceDetailsRouter = require('./api/home-api-routes');
+
 let fileUpload = require('express-fileupload');
+
 
 
 
@@ -54,7 +58,12 @@ app.use("/keyNote", keyNoteAPI());
 app.use("/workshop", worksopRouter);
 app.use("/workshop-proposal", worksopProposalRouter);
 
+
+app.use("/conference", conferenceDetailsRouter);
+
+
 app.use(fileUpload);
+
 
 app.listen(port, () => {
   console.log("Backend Started " + port);
