@@ -6,11 +6,19 @@ import ukeynotes from "./component/keynoteComponent/keynoteUserView";
 import MangKeynote from "./component/keynoteComponent/manageKeynote";
 import NewKeynote from "./component/keynoteComponent/AddKeyNote";
 import EditKeynote from "./component/keynoteComponent/editKeynote";
+import HomePage from './page/homePage/homePage.component';
+import UserRegistration from './component/userRegistration/userRegistration.component';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AcceptedWorkshopList from './component/workshopComponent/acceptedWorkshopList'
 import ProposalList from './component/workshopComponent/workshopproposals.list';
+
 import TemplateDownload from "./component/workshopComponent/template.download";
 import AddProposal from "./component/workshopComponent/addProposal";
+
+
+import TemplateDownload from './component/templateDownloadPage/template.component'
+//import WorkshopList from './component/workshopComponent/workshop.list';
+import Addpaper from './component/researchComponent/addRpaper'
 
 
 export default class App extends React.Component {
@@ -24,6 +32,11 @@ export default class App extends React.Component {
                     <Switch>
                         <Route exact path="/admin" component={AdminLogin}></Route>
                         <Route  path="/admin-dash" component={AdminDash}></Route>
+                        <Route  path="/template" component={TemplateDownload}></Route>
+                        <Route  path="/addPaper" component={Addpaper}></Route>
+
+                        <Route exact path="/" component={HomePage}></Route>
+                        <Route path="/registration" component={UserRegistration}></Route>
 
                         <Route  path="/workshop/template" component={TemplateDownload}></Route>
 
@@ -36,6 +49,7 @@ export default class App extends React.Component {
                         <Route  path="/mng-keynotes" component={MangKeynote}></Route>
                         <Route  path="/new-keynotes" component={NewKeynote}></Route>
                         <Route  path="/edit-keynotes/:id" component={EditKeynote}></Route>
+
 
                     </Switch>
 

@@ -4,8 +4,11 @@
   "description": "Application Framework Final",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "env-cmd ./Testing/test.env/ jest --watch --detectOpenHandles",
     "start": "nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "Tharindu,Kuli,Kavishka,Pinto",
   "license": "MIT",
@@ -15,10 +18,16 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+
+    "js-file-download": "^0.4.12",
+
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.15"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "env-cmd": "^8.0.2",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
   }
 }

@@ -30,7 +30,8 @@ class EditKeynote extends Component {
                     speaker: response.data.data.speaker,
                     speakerInfo: response.data.data.speakerInfo,
                     keynoteTitle: response.data.data.keynoteTitle,
-                    keynote: response.data.data.keynote 
+                    keynote: response.data.data.keynote
+                     
                 });
                 console.log(response.data.data._id);
                 console.log(this.props.match.params.id);
@@ -48,7 +49,8 @@ class EditKeynote extends Component {
             speaker: this.state.speaker,
             speakerInfo: this.state.speakerInfo,
             keynoteTitle:this.state.keynoteTitle,
-            keynote:this.state.keynote
+            keynote:this.state.keynote,
+            status:'pending'
         }
         console.log(KeyNotez);
         axios.put(`http://localhost:5000/keyNote/update/${this.state.id}`, KeyNotez)

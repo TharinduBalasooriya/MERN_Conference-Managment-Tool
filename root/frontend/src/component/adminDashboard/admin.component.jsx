@@ -8,8 +8,7 @@ import './admin.css'
 
 const Admin = (props)=>{
 
-    let user = AuthService.getCurrentUser();
-    console.log(user.usertype)
+    
     return(<div className="admin-body">
 
 
