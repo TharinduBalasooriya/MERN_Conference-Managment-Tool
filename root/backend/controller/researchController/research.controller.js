@@ -156,6 +156,15 @@ const downloadWorkshopTemplate =  function(req,res){
 }
 
 
+//Accepted Email
+
+
+
+//Declined Email
+
+
+
+
 
 
 module.exports ={

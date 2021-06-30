@@ -11,7 +11,7 @@ let ReviewPaper = (props)=>{
       "name": "",
       "email": 0,
       "mobileNumber": 0,
-      "topic": "Available",
+      "topic": "",
       "organization": "",
       "abstract":""
 
@@ -38,6 +38,66 @@ let ReviewPaper = (props)=>{
   },[props.match.params.id]);
 
 
+
+const onAccept = e=>{
+
+  
+  updatePaper()
+
+
+
+}
+
+const onDelete = e=>{
+
+  deletePaper();
+}
+
+
+
+const deletePaper = ()=>{
+
+  axios.delete('http://localhost:5000/api/researchers/'+props.match.params.id)
+  .then(response => { 
+      console.log(response.data)
+      window.location = '/rpaperhome';
+    })
+  .catch(e=>{
+      console.log(e)
+  });
+
+    
+    
+
+
+
+
+
+}
+
+const updatePaper = ()=>{
+
+  let data = {
+
+      status: 'Accepted',
+      name: paper.name,
+      email: paper.email,
+      mobileNumber: paper.mobileNumber,
+      topic: paper.topic,
+      organization: paper.organization,
+      abstract:paper.abstract
+
+  }
+  axios.put('http://localhost:5000/api/researchers/'+props.match.params.id,data)
+         .then(function (response){
+             console.log(response.data)
+             window.location = '/rpaperhome';
+         }).catch(function(er){
+             console.log(er)
+         })
+
+
+}
 
 
     
@@ -86,9 +146,9 @@ let ReviewPaper = (props)=>{
           <div className="Abstract">
 
               <h3 className="absTopic">ABSTARTCT</h3>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" readOnly>
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" defaultValue={paper.abstract} readOnly>
 
-                {paper.abstract}
+                
               </textarea>
 
           </div>
@@ -99,14 +159,14 @@ let ReviewPaper = (props)=>{
           <div className="row">
           <div className="col-sm">
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block">Download</button>
+            <button type="button" className="btn btn-secondary btn-lg btn-block">Download</button>
           </div>
             <div className="col-sm">
 
-            <button type="button" class="btn btn-success btn-lg btn-block">Accept</button>
+            <button type="button" className="btn btn-success btn-lg btn-block" onClick={onAccept}>Accept</button>
             </div>
             <div className="col-sm"> 
-            <button type="button" class="btn btn-danger btn-lg btn-block">Decline</button>
+            <button type="button" className="btn btn-danger btn-lg btn-block" onClick={onDelete}>Decline</button>
             </div>
             
           </div>
