@@ -51,6 +51,14 @@ router.get("/", (req, res) => {
 
   router.route("/templates/paper").get(rpaperController.downloadPaperTemplate)
   router.route("/templates/workshop").get(rpaperController.downloadWorkshopTemplate)
+
+  //accpetEmail
+  router.route("/papers/acceptemail").post(rpaperController.acceptEmail)
+
+  //decline email
+
+  router.route("/papers/declinemail").post(rpaperController.declinetEmail)
+
   
 
 

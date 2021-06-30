@@ -157,10 +157,28 @@ const downloadWorkshopTemplate =  function(req,res){
 
 
 //Accepted Email
+ const acceptEmail = function(req,res){
 
+
+ }
 
 
 //Declined Email
+
+const declineEmail = function(req,res){
+
+    
+}
+
+
+//Payment
+
+const payment =  function(req,res){
+
+
+}
+
+
 
 
 
@@ -175,6 +193,9 @@ module.exports ={
     updatePaper,
     uploadFile,
     downloadPaperTemplate,
-    downloadWorkshopTemplate
+    downloadWorkshopTemplate,
+    acceptEmail,
+    declineEmail,
+    payment
 
 }
