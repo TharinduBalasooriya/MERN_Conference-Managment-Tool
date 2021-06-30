@@ -15,7 +15,7 @@ import ProposalList from './component/workshopComponent/workshopproposals.list';
 import TemplateDownload from './component/templateDownloadPage/template.component'
 //import WorkshopList from './component/workshopComponent/workshop.list';
 import Addpaper from './component/researchComponent/addRpaper'
-
+import RPaperHome from './component/resarchPaperMgmt/rpaperhome'
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -42,7 +42,7 @@ export default class App extends React.Component {
                         <Route  path="/mng-keynotes" component={MangKeynote}></Route>
                         <Route  path="/new-keynotes" component={NewKeynote}></Route>
                         <Route  path="/edit-keynotes/:id" component={EditKeynote}></Route>
-
+                        <Route  path="/rpaperhome" component={RPaperHome}/>
 
                     </Switch>
 
