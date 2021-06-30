@@ -57,7 +57,7 @@ router.get("/", (req, res) => {
 
   //decline email
 
-  router.route("/papers/declinemail").post(rpaperController.declinetEmail)
+  router.route("/papers/declinemail").post(rpaperController.declineEmail)
 
   
 
