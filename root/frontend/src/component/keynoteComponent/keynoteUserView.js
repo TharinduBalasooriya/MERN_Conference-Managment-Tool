@@ -21,7 +21,7 @@ class Ukeynotes extends Component {
     return (
       <div className="container">
         <center><h1><b>KEYNOTES</b></h1></center>   
-        {this.state.keynotes.length > 0 && this.state.keynotes.map((item, index) => (
+        {this.state.keynotes.length > 0 && this.state.keynotes.filter(key => key.status == 'Approved').map((item, index) => (
           <div key={index} className="card mb-3">
             <div className="p-3" > 
               <h3><b>{item.speaker}</b></h3>
