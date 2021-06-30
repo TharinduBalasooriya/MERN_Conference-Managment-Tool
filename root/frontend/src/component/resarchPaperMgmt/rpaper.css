@@ -1,6 +1,7 @@
 .heading{
 
     text-align: center;
+    
 
 
 
@@ -9,6 +10,26 @@
 
 .rPaperTable{
     background-color: white;
+
+}
+
+.absTopic{
+
+    text-align: center;
+    color: brown;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.rpaper{
+    height: 100vh;
+    background-color:white;
+    opacity: 0.95;
+}
+
+.rpaperMain{
+  background-image: url('https://www.marsdd.com/wp-content/uploads/2020/01/blog-tech-conferences.jpg');
+
 
 }
 
