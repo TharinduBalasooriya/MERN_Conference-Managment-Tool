@@ -12,6 +12,8 @@ let worksopRouter = require('./api/workshop-api/workshop-api-router');
 
 let worksopProposalRouter = require('./api/workshop-api/workshopProposal-api-router');
 
+let fileUpload = require('express-fileupload');
+
 
 
 let mongoose = require("mongoose");
@@ -42,6 +44,8 @@ if (!db) {
     console.log("Connected")
 }
 
+
+
 app.use("/api", router);
 
 app.use("/keyNote", keyNoteAPI());
@@ -49,6 +53,7 @@ app.use("/keyNote", keyNoteAPI());
 app.use("/workshop", worksopRouter);
 app.use("/workshop-proposal", worksopProposalRouter);
 
+app.use(fileUpload);
 
 app.listen(port, () => {
   console.log("Backend Started " + port);

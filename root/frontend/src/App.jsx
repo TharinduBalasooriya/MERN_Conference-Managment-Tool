@@ -7,10 +7,10 @@ import MangKeynote from "./component/keynoteComponent/manageKeynote";
 import NewKeynote from "./component/keynoteComponent/AddKeyNote";
 import EditKeynote from "./component/keynoteComponent/editKeynote";
 import "bootstrap/dist/css/bootstrap.min.css";
-import WorkshopMenu from './component/workshopComponent/workshopMenu'
-import AddWorkshopProposal from './component/workshopComponent/addWorkshopProposal';
+import AcceptedWorkshopList from './component/workshopComponent/acceptedWorkshopList'
 import ProposalList from './component/workshopComponent/workshopproposals.list';
-//import WorkshopList from './component/workshopComponent/workshop.list';
+import TemplateDownload from "./component/workshopComponent/template.download";
+import AddProposal from "./component/workshopComponent/addProposal";
 
 
 export default class App extends React.Component {
@@ -25,10 +25,12 @@ export default class App extends React.Component {
                         <Route exact path="/admin" component={AdminLogin}></Route>
                         <Route  path="/admin-dash" component={AdminDash}></Route>
 
-                        <Route  path="/admin-dash/workshop" component={WorkshopMenu}></Route>
-                        <Route path="/user/add-proposal" component={AddWorkshopProposal}></Route>
+                        <Route  path="/workshop/template" component={TemplateDownload}></Route>
+
+                        <Route  path="/workshop-list" component={AcceptedWorkshopList}></Route>
+                        <Route path="/user/add-proposal" component={AddProposal}></Route>
                         <Route path="/workshop/proposal-list" component={ProposalList}></Route>
-                        <Route path="/workshop/workshop-list" component={ProposalList}></Route>
+                        {/* <Route path="/workshop/workshop-list" component={ProposalList}></Route> */}
 
                         <Route  path="/u-keynotes" component={ukeynotes}></Route>
                         <Route  path="/mng-keynotes" component={MangKeynote}></Route>
