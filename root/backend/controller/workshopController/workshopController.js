@@ -40,25 +40,15 @@ const getaWorkshop = async (req, res) => {
 
  //update workshop details
   const updateWorkshop = async (req, res) => {
-     if(req.body){
-         const workshop = new Workshop();
-         workshop.workshopTitle = req.body.workshopTitle;
-         workshop.description = req.body.description;
-         workshop.conductor = req.body.conductor;
-         workshop.date = req.body.date;
-         workshop.time = req.body.time;
-         workshop.status = req.body.status;
-
-         workshop.updateOne({_id: req.params._id})
-         .then(data => {
-            res.status(200).send({data: data});
+    
+    await Workshop.findByIdAndUpdate(req.params.id , {$set: req.body}, {new: true})
+        .then(response => {
+            res.status(200).send({data: response});
         })
         .catch(error => {
             res.status(500).send({error: error.message});
         });
-
-     }
- }
+}
 
      //delete a workshop
 const deleteWorkshop = async (req, res) => {

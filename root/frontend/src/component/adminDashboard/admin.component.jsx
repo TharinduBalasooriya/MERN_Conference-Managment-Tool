@@ -8,8 +8,7 @@ import './admin.css'
 
 const Admin = (props)=>{
 
-    let user = AuthService.getCurrentUser();
-    console.log(user.usertype)
+    
     return(<div className="admin-body">
 
 
@@ -59,7 +58,7 @@ const Admin = (props)=>{
                 <div className="col-sm-4">
                     <div className="tile green">
                         <h3 className="title">Manage WorkShops</h3>
-                        <Link className="row" to="">
+                        <Link className="row" to="/admin-dash/workshop">
 
                             <FileSlides color="white" size={96} />
 

@@ -1,10 +1,11 @@
-const WorkshopProposalProposal = require('../../models/workshop/workshopProposal');
+const Workshop = require('../../models/workshop/workshop');
+const WorkshopProposal = require('../../models/workshop/workshopProposal');
 
 //create WorkshopProposal proposal
-const createWorkshopProposalProposal = async (req, res ) => {
-    if(res.body){
-        const WorkshopProposalProposal = new WorkshopProposalProposal();
-        WorkshopProposalProposal.save() 
+const createWorkshopProposal = (req, res ) => {
+    if(req.body){
+        const workshopProposal = new WorkshopProposal(req.body);
+        workshopProposal.save() 
         .then((data) => {
             res.status(200).send({data: data});
         })
@@ -16,8 +17,8 @@ const createWorkshopProposalProposal = async (req, res ) => {
 }
 
 //get all WorkshopProposal proposal
-const getAllWorkshopProposalProposalsDetails = async (req, res) => {
-    await WorkshopProposalProposal.find({})
+const getAllWorkshopProposalsDetails = async (req, res) => {
+    await WorkshopProposal.find({})
     .then( data => {
         res.status(200).send({data: data});
     })
@@ -27,7 +28,7 @@ const getAllWorkshopProposalProposalsDetails = async (req, res) => {
  }
 
  //get a WorkshopProposal proposal
-const getaWorkshopProposalProposal = async (req, res) => {
+const getaWorkshopProposal = async (req, res) => {
     if(req.params && req.params.id){
         await WorkshopProposal.findById(req.params.id)
         .then(response => {
@@ -40,34 +41,25 @@ const getaWorkshopProposalProposal = async (req, res) => {
 }
 
  //update WorkshopProposal proposal details
-  const updateWorkshopProposalProposal = async (req, res) => {
-     if(req.body){
-         const WorkshopProposal = new WorkshopProposal();
-         WorkshopProposal.title = req.body.title;
-         WorkshopProposal.description = req.body.description;
-         WorkshopProposal.date = req.body.date;
-         WorkshopProposal.duration = req.body.duration;
-         WorkshopProposal.status = req.body.status;
-         WorkshopProposal.conductorName = req.body.conductorName;
-         WorkshopProposal.conductorPhone = req.body.conductorPhone;
-         WorkshopProposal.conductorEmail = req.body.conductorEmail;
+  const updateWorkshopProposal = async (req, res) => {
 
-
-         WorkshopProposal.updateOne({_id: req.params._id})
-         .then(data => {
-            res.status(200).send({data: data});
+        await WorkshopProposal.findByIdAndUpdate(req.params.id , {$set: req.body}, {new: true})
+        .then(response => {
+            res.status(200).send({data: response});
         })
         .catch(error => {
             res.status(500).send({error: error.message});
         });
 
-     }
  }
 
+
+
+
  //delete a WorkshopProposal proposal
- const deleteWorkshopProposalProposal = async (req, res) => {
+ const deleteWorkshopProposal = async (req, res) => {
     if(req.params && req.params.id){
-        await WorkshopProposalProposal.findByIdAndRemove(req.params.id)
+        await WorkshopProposal.findByIdAndRemove(req.params.id)
         .then(response => {
             res.status(200).send({data: response});
         })
@@ -78,9 +70,9 @@ const getaWorkshopProposalProposal = async (req, res) => {
 }
 
 module.exports = {
-    createWorkshopProposalProposal,
-    getAllWorkshopProposalProposalsDetails,
-    getaWorkshopProposalProposal,
-    updateWorkshopProposalProposal,
-    deleteWorkshopProposalProposal
+    createWorkshopProposal,
+    getAllWorkshopProposalsDetails,
+    getaWorkshopProposal,
+    updateWorkshopProposal,
+    deleteWorkshopProposal
 };
