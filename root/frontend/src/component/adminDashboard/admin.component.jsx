@@ -46,7 +46,7 @@ const Admin = (props)=>{
                 <div className="col-sm-4" >
                     <div className="tile orange" >
                         <h3 className="title">Manage Research Papers</h3>
-                        <Link className="row" to="/">
+                        <Link className="row" to="">
 
                             <Newspaper color="white" size={96} />
 
