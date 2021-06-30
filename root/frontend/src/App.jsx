@@ -21,6 +21,7 @@ import TemplateDownload from './component/templateDownloadPage/template.componen
 import Addpaper from './component/researchComponent/addRpaper'
 
 import RPaperHome from './component/resarchPaperMgmt/rpaperhome'
+import ReviewPaper from "./component/resarchPaperMgmt/reviewPaper";
 
 
 
@@ -38,6 +39,7 @@ export default class App extends React.Component {
                         <Route  path="/admin-dash" component={AdminDash}></Route>
                         <Route  path="/template" component={TemplateDownload}></Route>
                         <Route  path="/addPaper" component={Addpaper}></Route>
+                        <Route  path="/reviewPaper/:id" component={ReviewPaper}></Route>
 
                         <Route exact path="/" component={HomePage}></Route>
                         <Route path="/registration" component={UserRegistration}></Route>

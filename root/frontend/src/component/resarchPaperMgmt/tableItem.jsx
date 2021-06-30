@@ -1,5 +1,6 @@
 
 import React from "react";
+import {Link} from "react-router-dom";
 
 let TableItem = (props)=>{
 
@@ -13,7 +14,7 @@ let TableItem = (props)=>{
             <td>{paper.organization}</td>
 
             {
-                paper.status == 'pending' ? (
+                paper.status === 'pending' ? (
 
                 <td className="font-weight-bold text-danger">{paper.status}</td>
 
@@ -23,7 +24,11 @@ let TableItem = (props)=>{
             }
 
             <td>
-                <button type="button" className="btn btn-secondary">Review</button>
+
+                <Link to={'/reviewPaper/' +paper._id }>
+                    <button type="button" className="btn btn-secondary">Review</button>
+                </Link>
+
 
             </td>
         </tr>

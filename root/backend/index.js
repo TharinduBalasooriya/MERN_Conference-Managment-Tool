@@ -1,6 +1,5 @@
 
 let express = require("express");
-const fileUpload = require('express-fileupload');
 let app = express();
 
 const cors = require("cors");
