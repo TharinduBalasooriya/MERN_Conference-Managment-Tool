@@ -59,6 +59,9 @@ router.get("/", (req, res) => {
 
   router.route("/papers/declinemail").post(rpaperController.declineEmail)
 
+  //payments
+  router.route("/papers/payments").post(rpaperController.payment);
+
   
 
 

@@ -3,6 +3,7 @@ const express =  require('express');
 
 const Researcher = require('../../models/researcher');
 
+const Payment = require('../../models/paymentmodel')
 
 
 //add
@@ -173,7 +174,26 @@ const declineEmail = function(req,res){
 
 //Payment
 
-const payment =  function(req,res){
+const payment =  async function(req,res){
+
+    if(req.body){
+
+        const payment_new = Payment(req.body);
+
+        try{
+
+            let result = await payment_new.save();
+            res.status(200).send({result:result});
+
+
+        }catch(err){
+            res.status(500).send({error:err.message});
+        }
+
+
+    }
+
+
 
 
 }
