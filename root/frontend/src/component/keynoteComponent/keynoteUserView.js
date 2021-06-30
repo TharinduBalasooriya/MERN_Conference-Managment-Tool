@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import axios from 'axios';
+import Header from '../../component/homePageElements/header/header.component'
 
 class Ukeynotes extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Ukeynotes extends Component {
   render() {
     return (
       <div className="container">
+        <Header/><br/><br/>
         <center><h1><b>KEYNOTES</b></h1></center>   
         {this.state.keynotes.length > 0 && this.state.keynotes.filter(key => key.status == 'Approved').map((item, index) => (
           <div key={index} className="card mb-3">
