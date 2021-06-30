@@ -35,7 +35,7 @@ const dwonloadWorkshop =()=>{
 
 
 }
-const templateDownload =  ()=>{
+const TemplateDownload =  ()=>{
 
         return(
 
@@ -138,4 +138,4 @@ const templateDownload =  ()=>{
 
 }
 
-export default templateDownload
+export default TemplateDownload

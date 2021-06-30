@@ -15,7 +15,7 @@ class HomePage extends Component{
 
     render(){
         return(
-            <div className= "">
+            <div className= "home-parallax">
                 <Header/>
                 <section>
                     <div>
