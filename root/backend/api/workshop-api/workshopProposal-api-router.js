@@ -7,6 +7,9 @@ const controller = require('../../controller/workshopController/workshopProposal
     router.get('/:id', controller.getaWorkshopProposal);
     router.put('/:id', controller.updateWorkshopProposal);
     router.delete('/:id', controller.deleteWorkshopProposal);
+    router.put('/status/:id', controller.updateProposalStatus);
+    router.post('/upload', controller.uploadProposal);
+    router.get('/workshoplist', controller.getAcceptedWorkshopProposalsList);
 
     module.exports = router;
     
