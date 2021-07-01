@@ -13,6 +13,12 @@ status:{
 
 },
 abstract:String,
+filename:{
+
+  type:String,
+  default:"CA-3.pdf",
+
+}
 
 
 });

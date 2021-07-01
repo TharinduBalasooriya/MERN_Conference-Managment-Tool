@@ -4,6 +4,7 @@ const express =  require('express');
 const Researcher = require('../../models/researcher');
 
 const Payment = require('../../models/paymentmodel')
+const sgMail = require('@sendgrid/mail');
 
 
 //add
@@ -151,6 +152,27 @@ const downloadPaperTemplate =  function(req,res){
     res.download(file); // Set disposition and send it.
 }
 
+const downloadRpaperByName =  function(req,res){
+    // if(req.body){
+    //     const filename = req.body.filename
+    //     const file = `templates/${{filename}}`;
+    //     res.download(file)
+    // }
+
+    let filename = 'CA-3.pdf'
+
+    if(req.body){
+
+        filename = req.body.filename
+        console.log(filename)
+        const filepath = "papers/" + filename
+        console.log(filepath)
+        res.download(filepath); // Set disposition and send it.
+
+
+    }
+    
+}
 const downloadWorkshopTemplate =  function(req,res){
     const file = `templates/ICAF-Workshop-Template.pptx`;
     res.download(file); // Set disposition and send it.
@@ -158,15 +180,86 @@ const downloadWorkshopTemplate =  function(req,res){
 
 
 //Accepted Email
- const acceptEmail = function(req,res){
+ const acceptEmail =  async function(req,res){
+
+    
+
+    if(req.body){
+
+        //const payment_new = Payment(req.body);
+        sgMail.setApiKey('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')
+        const msg = { // email content
+             to: req.body.email, // recipient's email
+             from: 'gimhanakavi@gmail.com', // sender's email
+             subject: 'ICAF 2021',
+             text: 'Your ICAF 2021 Paper Submisson has been accepted',
+            
+         }
+
+        try {
+            let result = await sgMail.send(msg);
+            console.log(result)
+            res.status(200).send('Has been sent succefully')
+
+            
+          } catch (error) {
+            console.error(error);
+        
+            if (error.response) {
+              console.error(error.response.body)
+            }
+          }
+
+          
 
 
+    }
+
+    
  }
 
 
 //Declined Email
 
-const declineEmail = function(req,res){
+const declineEmail = async function(req,res){
+
+
+    if(req.body){
+
+        //const payment_new = Payment(req.body);
+        sgMail.setApiKey('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')
+        const msg = { // email content
+             to: req.body.email, // recipient's email
+             from: 'gimhanakavi@gmail.com', // sender's email
+             subject: 'ICAF 2021',
+             text: 'Your ICAF 2021 Paper Submisson has been Declined',
+            
+         }
+
+        try {
+            let result = await sgMail.send(msg);
+            console.log(result)
+            res.status(200).send('Has been sent succefully')
+
+            
+          } catch (error) {
+            console.error(error);
+        
+            if (error.response) {
+              console.error(error.response.body)
+            }
+          }
+
+          
+
+
+    }
+
+
+       
+
+
+    
 
     
 }
@@ -216,6 +309,7 @@ module.exports ={
     downloadWorkshopTemplate,
     acceptEmail,
     declineEmail,
-    payment
+    payment,
+    downloadRpaperByName
 
 }

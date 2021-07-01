@@ -1,6 +1,9 @@
 import React ,{useState,useEffect}from 'react'
 import '../resarchPaperMgmt/rpaper.css'
 import axios from 'axios';
+import AdminNavBar from '../adminDashboard/adminNavBar'
+import fileDownload from 'js-file-download';
+
 
 
 
@@ -13,7 +16,8 @@ let ReviewPaper = (props)=>{
       "mobileNumber": 0,
       "topic": "",
       "organization": "",
-      "abstract":""
+      "abstract":"",
+      "filename":""
 
    
 
@@ -43,14 +47,19 @@ const onAccept = e=>{
 
   
   updatePaper()
+  sendAcceptEmail()
+  
+  
 
 
 
 }
 
 const onDelete = e=>{
-
+  sendDeclineEmail();
   deletePaper();
+  alert('Email has been sent')
+  
 }
 
 
@@ -75,6 +84,92 @@ const deletePaper = ()=>{
 
 }
 
+const sendAcceptEmail = ()=>{
+
+  let data = {
+
+    status: 'Accepted',
+    name: paper.name,
+    email: paper.email,
+    mobileNumber: paper.mobileNumber,
+    topic: paper.topic,
+    organization: paper.organization,
+    abstract:paper.abstract
+
+}
+
+  axios.post('http://localhost:5000/api/papers/acceptemail',data)
+  .then(response => { 
+      console.log(response)
+     
+    })
+  .catch(e=>{
+      console.log(e)
+  });
+
+
+}
+
+const downloadFile = ()=>{
+
+  let data = {
+
+    status: 'Declined',
+    name: paper.name,
+    email: paper.email,
+    mobileNumber: paper.mobileNumber,
+    topic: paper.topic,
+    organization: paper.organization,
+    abstract:paper.abstract,
+    filename:paper.filename
+
+}
+// axios.post('http://localhost:5000/api/papers/download',data)
+//   .then(response => { 
+//       console.log(response)
+      
+//     })
+//   .catch(e=>{
+//       console.log(e)
+//   });
+
+  axios.post('http://localhost:5000/api/papers/download',data, {
+        responseType: 'blob',
+      }).then(res => {
+          
+        fileDownload(res.data, data.filename);
+      });
+
+
+
+}
+
+const sendDeclineEmail = ()=>{
+
+  let data = {
+
+    status: 'Declined',
+    name: paper.name,
+    email: paper.email,
+    mobileNumber: paper.mobileNumber,
+    topic: paper.topic,
+    organization: paper.organization,
+    abstract:paper.abstract
+
+}
+
+  axios.post('http://localhost:5000/api/papers/declinemail',data)
+  .then(response => { 
+      console.log(response)
+      
+    })
+  .catch(e=>{
+      console.log(e)
+  });
+
+
+}
+
 const updatePaper = ()=>{
 
   let data = {
@@ -85,7 +180,8 @@ const updatePaper = ()=>{
       mobileNumber: paper.mobileNumber,
       topic: paper.topic,
       organization: paper.organization,
-      abstract:paper.abstract
+      abstract:paper.abstract,
+      filename:paper.filename
 
   }
   axios.put('http://localhost:5000/api/researchers/'+props.match.params.id,data)
@@ -105,6 +201,7 @@ const updatePaper = ()=>{
 
       
       <div className="rpaperMain">
+        <AdminNavBar></AdminNavBar>
 
         {
           gotData ? (
@@ -159,7 +256,7 @@ const updatePaper = ()=>{
           <div className="row">
           <div className="col-sm">
 
-            <button type="button" className="btn btn-secondary btn-lg btn-block">Download</button>
+            <button type="button" className="btn btn-secondary btn-lg btn-block" onClick={downloadFile}>Download</button>
           </div>
             <div className="col-sm">
 
