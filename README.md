@@ -24,9 +24,8 @@ The web application has the following roles,
 
 ## Contributors
 
-
-## Contributing
-Contributions are welcome!
+## Technology
+ * MERN Stack
 
 ## Support
 Give :star2: to this repository if it helped you!
